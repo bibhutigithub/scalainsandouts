@@ -11,9 +11,20 @@ object FunctionsAndMethods {
     // On the left of => are arguments and on the right is an expression
     // involving the parameters.
     // We can name the functions as well by assigning the it to a value.
-    val incrementByOne = (x:Int) => x+1
+    val incrementByOne = (x:Int) => {
+      (x + 1)
+    }
     println(incrementByOne(1))
 
+    // Anonymous functions with multiple parameters
+    val incByTwoAndMulByTen = (y:Int)=>(x:Int) => {
+      (y+2)*x
+    }
+
+    val incByTwo = incByTwoAndMulByTen(5)
+    val mulBy10 = incByTwo(10)
+
+    println(mulBy10)
     // Example of function with no arguments
     val getName = () => "Bibhuti"
     println(getName())
@@ -23,5 +34,12 @@ object FunctionsAndMethods {
       x+5
     }
     println(myMethod(5))
+
+    // Methods with multiple parameters list
+    def incrementAndMultiply(x:Int)(y:Int) = {
+      (x+1)*y
+    }
+
+    println(incrementAndMultiply(5)(6))
   }
 }
