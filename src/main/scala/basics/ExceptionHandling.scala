@@ -16,8 +16,6 @@ def exceptionHandlingDemo():Unit={
   finally
     println("Always executed at last")
 
-
-
   println("execution ends")
 }
 
