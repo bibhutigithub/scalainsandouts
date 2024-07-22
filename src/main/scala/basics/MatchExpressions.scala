@@ -57,15 +57,31 @@ val result = num match
   val person1 = Member("Bibhuti")
   val person2 = Member("Soumya")
 
+  val mem1 = Member("Plaban")
+  val mem2 = Member("Prasant")
   // Case class matching
   val person1Response = matchPerson(person1)
   val person2Response = matchPerson(person2)
 
+  // Case class matching
+  val member1Response = matchMember(mem1)
+  val member2Response = matchMember(mem2)
+
   println(person1Response+"####"+person2Response)
+
+  println(member1Response+"####"+member2Response)
 }
 
+// Matching through constructor patterns
 def matchPerson(person: Member): String = {
   person match
     case Member(name) if name == "Bibhuti" => "It's Bibhuti"
     case Member(name) if name == "Soumya" => "It's Soumya"
+}
+
+// Matching through Type test patterns
+def matchMember(person: Member): String = {
+  person match
+    case m:Member if m.name == "Plaban" => "It's Plaban"
+    case m:Member if m.name == "Prasant" => "It's Prasant"
 }
