@@ -1,4 +1,7 @@
 package basics
+
+case class Member(name: String)
+
 @main
 def matchExpressions():Unit = {
 
@@ -51,6 +54,18 @@ val result = num match
     case i if i%2 == 0 => "Even"
     case i if i%2 != 0 => "Odd"
 
-  println(myNumResult)
+  val person1 = Member("Bibhuti")
+  val person2 = Member("Soumya")
+
+  // Case class matching
+  val person1Response = matchPerson(person1)
+  val person2Response = matchPerson(person2)
+
+  println(person1Response+"####"+person2Response)
 }
 
+def matchPerson(person: Member): String = {
+  person match
+    case Member(name) if name == "Bibhuti" => "It's Bibhuti"
+    case Member(name) if name == "Soumya" => "It's Soumya"
+}
