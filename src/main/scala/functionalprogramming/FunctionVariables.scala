@@ -3,7 +3,7 @@ package functionalprogramming
 @main
 def functionVariableDriver(): Unit = {
   val myList = List(5, 10, 20, 30)
-  val sumFunction: (a: Int, b: Int) => Int = _ + _
+  val sumFunction: (Int, Int) => Int = _ + _
   val mulFunc = (a: Int, b: Int) => a * b
 
   val doubleFunc = (a: Int) => a * 2
